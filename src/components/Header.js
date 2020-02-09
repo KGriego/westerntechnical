@@ -55,15 +55,15 @@ export default class Header extends Component {
               <img src={WT} className={'img-fluid'} alt={''} />
             </a>
           ) : (
-            <Link to={'/#page-top'} className={'navbar-brand'}>
-              <img src={WT} className={'img-fluid'} alt={''} />
-            </Link>
-          )}
+              <Link to={'/#page-top'} className={'navbar-brand'}>
+                <img src={WT} className={'img-fluid'} alt={''} />
+              </Link>
+            )}
           <button
             onClick={_ => this.toggleMenu(!openMenu)}
             className={`navbar-toggler navbar-toggler-right ${
               openMenu && mobile ? '' : 'collapsed'
-            }`}
+              }`}
             type={'button'}
             aria-controls={'navbarResponsive'}
             aria-expanded={openMenu}
@@ -95,10 +95,10 @@ export default class Header extends Component {
                     </a>
                   </Scroll>
                 ) : (
-                  <Link to={'/#services'} className={'nav-link'}>
-                    Services
+                    <Link to={'/#services'} className={'nav-link'}>
+                      Services
                   </Link>
-                )}
+                  )}
               </li>
               <li className={'nav-item'}>
                 {currentPage === '' ? (
@@ -113,10 +113,10 @@ export default class Header extends Component {
                     </a>
                   </Scroll>
                 ) : (
-                  <Link to={'/#about'} className={'nav-link'}>
-                    About
+                    <Link to={'/#about'} className={'nav-link'}>
+                      About
                   </Link>
-                )}
+                  )}
               </li>
               <li className="nav-item">
                 {currentPage === '' ? (
@@ -131,10 +131,10 @@ export default class Header extends Component {
                     </a>
                   </Scroll>
                 ) : (
-                  <Link to={'/#meettheteam'} className={'nav-link'}>
-                    Meet the team
+                    <Link to={'/#meettheteam'} className={'nav-link'}>
+                      Meet the team
                   </Link>
-                )}
+                  )}
               </li>
               <li className={'nav-item'}>
                 {currentPage === 'contactPage' ? (
@@ -145,14 +145,14 @@ export default class Header extends Component {
                     element={'contact'}
                   >
                     <a className={'nav-link'} href={'/contact#contact'}>
-                      Contact, scroll
+                      Contact
                     </a>
                   </Scroll>
                 ) : (
-                  <Link className={'nav-link'} to={'/contact#contact'}>
-                    Contact
+                    <Link className={'nav-link'} to={'/contact#contact'}>
+                      Contact
                   </Link>
-                )}
+                  )}
               </li>
             </ul>
           </div>
