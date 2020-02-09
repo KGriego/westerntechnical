@@ -24,7 +24,7 @@ class Scroll extends React.Component {
   }
   handleClick(e) {
     e.preventDefault();
-    const { onClick = () => {} } = this.props;
+    const { onClick = () => { } } = this.props;
     let elem = 0;
     let scroll = true;
     const { type, element, offset, timeout } = this.props;
@@ -65,8 +65,8 @@ class Scroll extends React.Component {
         {typeof this.props.children === 'object' ? (
           React.cloneElement(this.props.children, { onClick: this.handleClick })
         ) : (
-          <span onClick={this.handleClick}>{this.props.children}</span>
-        )}
+            <span onClick={this.handleClick}>{this.props.children}</span>
+          )}
       </Element>
     );
   }

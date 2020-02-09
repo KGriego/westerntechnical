@@ -2,16 +2,9 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Scroll from '../components/Scroll';
-import Footer from '../components/Footer';
-import Social from '../components/Social';
 
 import BackgroundSlider from 'gatsby-image-background-slider'
 
-import demo1 from '../assets/images/WT.jpg';
-import gplay from '../assets/images/google-play-badge.svg';
-import astore from '../assets/images/app-store-badge.svg';
 import HomeBodyContent from '../components/HomeBodyContent';
 import AboutUs from '../components/AboutUs';
 import MeetTheTeam from '../components/MeetTheTeam';
@@ -58,7 +51,8 @@ const IndexPage = () => (
         </div>
       </div>
     </header>
-    <section className="bg-primary text-center" id="services">
+    <section className="text-center" id="services">
+      <br />
       <br />
       <HomeBodyContent />
     </section>

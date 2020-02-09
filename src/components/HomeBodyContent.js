@@ -72,7 +72,7 @@ class HomeBodyContent extends React.Component {
                     We perform all steel structural reinforcements on all tower types including
                     steel fabrication, welding, foundation reinforcements.
                     <br />
-                    <List bulleted relaxed centered>
+                    <List bulleted relaxed centered={'true'}>
                       {modifications.map((item, i) => {
                         return (
                           <List.Item key={`${item}-${i}`}>

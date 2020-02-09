@@ -26,7 +26,6 @@ class Layout extends Component {
           }
         `}
         render={data => {
-          console.log(data)
           return (
             <>
               <Helmet

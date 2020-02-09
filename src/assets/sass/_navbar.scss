@@ -1,8 +1,6 @@
 // Styling for the navbar
 #mainNav {
   position: fixed;
-  width: 100%;
-  z-index: 1001;
   -webkit-transition: 0.35s all;
   -o-transition: 0.35s all;
   transition: 0.35s all;
@@ -93,11 +91,17 @@
       padding: 8px 10px;
       color: white;
     }
+    .show {
+      .navbar-nav {
+        background-color: rgb(63, 63, 63);
+        li > a {
+          margin: 10px;
+          color: white;
+        }
+      }
+    }
   }
   @media (min-width: 992px) {
-    position: fixed;
-    width: 100%;
-    z-index: 1001;
     -webkit-transition: 0.35s all;
     -o-transition: 0.35s all;
     transition: 0.35s all;

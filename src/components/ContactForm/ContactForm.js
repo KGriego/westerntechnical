@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Header, Item, List, Divider, Form } from "semantic-ui-react";
+import { Grid, Header, Item, List, Divider } from "semantic-ui-react";
 import InquiryForm from "./InquiryForm";
 import ApplicationForm from "./ApplicationForm";
 import PDF from "./PDF_Application";

@@ -34,7 +34,6 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "npm run clean && gatsby build",
-    "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
     "reinstall": "rm -rf node_modules .cache public && npm cache clean --force && npm install",
     "format": "prettier --write '**/*.js'",
