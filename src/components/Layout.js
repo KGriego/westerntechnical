@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Header from './Header'
 import Footer from './Footer'
-import '../assets/sass/new-age.scss';
+import '../assets/sass/site.scss';
 
 class Layout extends Component {
   render() {
