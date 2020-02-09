@@ -43,6 +43,7 @@ export default class Header extends Component {
 
   render() {
     const { openMenu, visibilityClass, mobile, currentPage } = this.state;
+    console.log(currentPage)
     return (
       <nav
         className={`navbar navbar-expand-lg navbar-light fixed-top ${visibilityClass}`}
@@ -53,7 +54,7 @@ export default class Header extends Component {
             <a className="navbar-brand" href="#page-top">
               <img src={WT} className="img-fluid" alt="" />
             </a>
-            : <Link to={"/#page-top"}>
+            : <Link to={"/#page-top"} className={'navbar-brand'}>
               <img src={WT} className="img-fluid" alt="" /></Link>
           }
           <button
@@ -88,7 +89,7 @@ export default class Header extends Component {
                         Services
                     </a>
                     </Scroll>
-                    : <Link to={"/#services"}>Services</Link>
+                    : <Link to={"/#services"} className={'nav-link'}>Services</Link>
                 }
               </li>
               <li className="nav-item">
@@ -103,7 +104,7 @@ export default class Header extends Component {
                       About
                   </a>
                   </Scroll>
-                  : <Link to={"/#about"}>
+                  : <Link to={"/#about"} className={'nav-link'}>
                     About</Link>}
               </li>
               <li className="nav-item">
@@ -118,13 +119,25 @@ export default class Header extends Component {
                       Meet the team
                   </a>
                   </Scroll>
-                  : <Link to={"/#meettheteam"}>
+                  : <Link to={"/#meettheteam"} className={'nav-link'}>
                     Meet the team</Link>}
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contact
+                {currentPage === 'contactPage' ?
+                  <Scroll
+                    onClick={_ => mobile && this.toggleMenu(!openMenu)}
+                    type="id"
+                    callback={this.checkIfMobileIsTrue}
+                    element="contact"
+                  >
+                    <a className="nav-link" href="/contact#contact">
+                      Contact, scroll
+                  </a>
+                  </Scroll> :
+                  <Link className="nav-link" to="/contact#contact">
+                    Contact
                   </Link>
+                }
               </li>
             </ul>
           </div>
