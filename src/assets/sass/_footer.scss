@@ -1,5 +1,6 @@
 // Styling for the footer
-footer {
+.footer {
+  font-size: 1.4em !important;
     padding: 25px 0;
     text-align: center;
     color: fade-out(white, .7);
@@ -22,5 +23,11 @@ footer {
                 }
             }
         }
+    }
+  
+    .footerLinks {
+      .item {
+        color: white !important;
+      }
     }
 }

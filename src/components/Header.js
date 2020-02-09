@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import config from '../../config';
+import { Link } from 'gatsby'
 import Scroll from './Scroll';
+import WT from '../assets/images/WT.jpg';
+
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -9,9 +11,7 @@ export default class Header extends Component {
       visibilityClass: '',
     };
   }
-  toggleMenu = value => {
-    this.setState({ openMenu: value });
-  };
+  toggleMenu = value => this.setState({ openMenu: value });
 
   handleScroll = () => {
     const { visibilityClass } = this.state;
@@ -41,19 +41,19 @@ export default class Header extends Component {
       >
         <div className="container">
           <a className="navbar-brand" href="#page-top">
-            {config.siteTitle}
+            <img src={WT} className="img-fluid" alt="" />
           </a>
           <button
             onClick={_ => this.toggleMenu(!openMenu)}
             className={`navbar-toggler navbar-toggler-right ${
               openMenu ? '' : 'collapsed'
-            }`}
+              }`}
             type="button"
             aria-controls="navbarResponsive"
             aria-expanded={openMenu}
             aria-label="Toggle navigation"
           >
-            Menu
+            Menu{' '}
             <i className="fas fa-bars"></i>
           </button>
 
@@ -66,10 +66,10 @@ export default class Header extends Component {
                 <Scroll
                   onClick={_ => this.toggleMenu(!openMenu)}
                   type="id"
-                  element="download"
+                  element="services"
                 >
-                  <a className="nav-link" href="#download">
-                    Download
+                  <a className="nav-link" href="#services">
+                    Services
                   </a>
                 </Scroll>
               </li>
@@ -77,10 +77,10 @@ export default class Header extends Component {
                 <Scroll
                   onClick={_ => this.toggleMenu(!openMenu)}
                   type="id"
-                  element="features"
+                  element="about"
                 >
-                  <a className="nav-link" href="#features">
-                    Features
+                  <a className="nav-link" href="#about">
+                    About
                   </a>
                 </Scroll>
               </li>
@@ -88,12 +88,17 @@ export default class Header extends Component {
                 <Scroll
                   onClick={_ => this.toggleMenu(!openMenu)}
                   type="id"
-                  element="contact"
+                  element="meettheteam"
                 >
-                  <a className="nav-link" href="#contact">
-                    Contact
+                  <a className="nav-link" href="#meettheteam">
+                    Meet the team
                   </a>
                 </Scroll>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">
+                  Contact
+                  </Link>
               </li>
             </ul>
           </div>

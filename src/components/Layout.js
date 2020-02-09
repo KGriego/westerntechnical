@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-
+import Header from './Header'
+import Footer from './Footer'
 import '../assets/sass/new-age.scss';
 
 class Layout extends Component {
@@ -15,24 +16,36 @@ class Layout extends Component {
             site {
               siteMetadata {
                 title
+                description
+                author
               }
+            }
+            sitePage {
+              path
             }
           }
         `}
-        render={data => (
-          <>
-            <Helmet
-              title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'description', content: 'Casual' },
-                { name: 'keywords', content: 'site, web' },
-              ]}
-            >
-              <html lang="en" />
-            </Helmet>
-            <div className={'page-top'}>{children}</div>
-          </>
-        )}
+        render={data => {
+          console.log(data)
+          return (
+            <>
+              <Helmet
+                title={data.site.siteMetadata.title}
+                meta={[
+                  { name: 'description', content: 'Casual' },
+                  { name: 'keywords', content: 'site, web' },
+                ]}
+              >
+                <html lang="en" />
+              </Helmet>
+              <Header />
+              <div className={'page-top'}>
+                {children}
+              </div>
+              <Footer />
+            </>
+          )
+        }}
       />
     );
   }
