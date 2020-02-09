@@ -14,6 +14,7 @@ class Scroll extends React.Component {
     timeout: PropTypes.number,
     children: PropTypes.node.isRequired,
     onClick: PropTypes.func,
+    callback: PropTypes.func
   };
   constructor() {
     super();
@@ -46,6 +47,9 @@ class Scroll extends React.Component {
       : console.log(`Element not found: ${element}`); // eslint-disable-line
 
     onClick(e);
+    if (this.props.callback) {
+      this.props.callback()
+    }
   }
   scrollTo(element, offSet = 0, timeout = null) {
     const elemPos = element

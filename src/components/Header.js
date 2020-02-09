@@ -9,12 +9,19 @@ export default class Header extends Component {
     this.state = {
       openMenu: false,
       visibilityClass: '',
-      currentPage: ''
+      currentPage: '',
+      mobile: false
     };
   }
-  toggleMenu = value =>
-    this.setState({ openMenu: value, currentPage: window.location.href.includes('contact') ? 'contactPage' : '' });
+  componentDidMount() {
+    window.location.href.includes('contact') && this.setState({ currentPage: 'contactPage' })
+    window.addEventListener('scroll', this.handleScroll);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
 
+  toggleMenu = value => this.setState({ openMenu: value });
   handleScroll = () => {
     const { visibilityClass } = this.state;
     if (window.pageYOffset > 100) {
@@ -27,16 +34,15 @@ export default class Header extends Component {
       }
     }
   };
-  componentDidMount() {
-    window.location.href.includes('contact') && this.setState({ currentPage: 'contactPage' })
-    window.addEventListener('scroll', this.handleScroll);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+  checkIfMobileIsTrue = () => {
+    const { openMenu } = this.state;
+    if (window.innerWidth < 992) {
+      this.toggleMenu(!openMenu)
+    }
   }
 
   render() {
-    const { openMenu, visibilityClass, currentPage } = this.state;
+    const { openMenu, visibilityClass, mobile, currentPage } = this.state;
     return (
       <nav
         className={`navbar navbar-expand-lg navbar-light fixed-top ${visibilityClass}`}
@@ -52,9 +58,7 @@ export default class Header extends Component {
           }
           <button
             onClick={_ => this.toggleMenu(!openMenu)}
-            className={`navbar-toggler navbar-toggler-right ${
-              openMenu ? '' : 'collapsed'
-              }`}
+            className={`navbar-toggler navbar-toggler-right ${openMenu && mobile ? '' : 'collapsed'}`}
             type="button"
             aria-controls="navbarResponsive"
             aria-expanded={openMenu}
@@ -75,8 +79,9 @@ export default class Header extends Component {
                 {
                   currentPage === '' ?
                     <Scroll
-                      onClick={_ => this.toggleMenu(!openMenu)}
+                      onClick={_ => mobile && this.toggleMenu(!openMenu)}
                       type="id"
+                      callback={this.checkIfMobileIsTrue}
                       element="services"
                     >
                       <a className="nav-link" href="#services">
@@ -89,8 +94,9 @@ export default class Header extends Component {
               <li className="nav-item">
                 {currentPage === '' ?
                   <Scroll
-                    onClick={_ => this.toggleMenu(!openMenu)}
+                    onClick={_ => mobile && this.toggleMenu(!openMenu)}
                     type="id"
+                    callback={this.checkIfMobileIsTrue}
                     element="about"
                   >
                     <a className="nav-link" href="#about">
@@ -103,8 +109,9 @@ export default class Header extends Component {
               <li className="nav-item">
                 {currentPage === '' ?
                   <Scroll
-                    onClick={_ => this.toggleMenu(!openMenu)}
+                    onClick={_ => mobile && this.toggleMenu(!openMenu)}
                     type="id"
+                    callback={this.checkIfMobileIsTrue}
                     element="meettheteam"
                   >
                     <a className="nav-link" href="#meettheteam">

@@ -11,7 +11,7 @@ import MeetTheTeam from '../components/MeetTheTeam';
 
 const IndexPage = () => (
   <Layout>
-    <header className="masthead" style={{ height: '100vh' }}>
+    <header className="masthead">
       <div className="h-100">
         <div style={{
           width: '100vw',
@@ -52,16 +52,12 @@ const IndexPage = () => (
       </div>
     </header>
     <section className="text-center" id="services">
-      <br />
-      <br />
       <HomeBodyContent />
     </section>
     <section id="about">
-      <br />
       <AboutUs />
     </section>
     <section id='meettheteam'>
-      <br />
       <MeetTheTeam />
     </section>
   </Layout >

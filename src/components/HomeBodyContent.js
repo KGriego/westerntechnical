@@ -64,7 +64,7 @@ class HomeBodyContent extends React.Component {
                 </Item.Content>
               </Item>
             </Grid.Column>
-            <Grid.Column computer={"4"} mobile={"14"} style={{ marginBottom: 30 }} tablet={"14"}>
+            <Grid.Column computer={"5"} mobile={"14"} style={{ marginBottom: 30 }} tablet={"14"}>
               <Item>
                 <Item.Content>
                   <Item.Header as={"h3"}>Modifications</Item.Header>
@@ -97,7 +97,6 @@ class HomeBodyContent extends React.Component {
                 </Item.Content>
               </Item>
             </Grid.Column>
-            <Grid.Column computer={"1"} only={"computer"} />
           </Grid.Row>
         </Grid>
       </div>
