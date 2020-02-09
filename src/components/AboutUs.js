@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Divider, Item, Header } from 'semantic-ui-react';
-// import "../../CSS/aboutUs.css";
 
 export default function AboutUs() {
   return (

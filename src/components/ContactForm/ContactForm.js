@@ -29,8 +29,8 @@ class ContactForm extends Component {
     return (
       <>
         <HeaderImage />
-        <section className="text-center" id={'contact'}>
-          <div className={'ContactPage'} style={{ backgroundColor: '#F7F7F7' }}>
+        <section className={'text-center ContactPage'} id={'contact'}>
+          <div style={{ backgroundColor: '#F7F7F7' }}>
             <Grid centered>
               <Grid.Row>
                 <Grid.Column mobile={'14'}>
@@ -63,7 +63,7 @@ class ContactForm extends Component {
                   className={'someMarginBottom'}
                   computer={'6'}
                   mobile={'10'}
-                  tablet={'5'}
+                  tablet={'6'}
                 >
                   <Header as={'h3'}>Contact Us</Header>
                   <List>
@@ -85,7 +85,7 @@ class ContactForm extends Component {
                     </List.Item>
                   </List>
                 </Grid.Column>
-                <Grid.Column computer={'6'} mobile={'10'} tablet={'5'}>
+                <Grid.Column computer={'6'} mobile={'10'} tablet={'6'}>
                   <Header as={'h2'}>Hours</Header>
                   <List bulleted>
                     <List.Item>
@@ -139,20 +139,19 @@ class ContactForm extends Component {
                 </Item>
               </Grid.Row>
               <Grid.Row>
-                {/*  {value === "contact" ? ( */}
-                <InquiryForm
-                  comments={comments}
-                  email={email}
-                  error={error}
-                  handleChange={this.handleChange}
-                  handleSubmit={this.handleSubmit}
-                  loading={loading}
-                  name={name}
-                  phoneNumber={phoneNumber}
-                  sent={sent}
-                />
-                {/*  ) : ( <ApplicationForm />
-             )} */}
+                <Grid.Column computer={'12'} tablet={'12'} mobile={'12'}>
+                  <InquiryForm
+                    comments={comments}
+                    email={email}
+                    error={error}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                    loading={loading}
+                    name={name}
+                    phoneNumber={phoneNumber}
+                    sent={sent}
+                  />
+                </Grid.Column>
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column computer={'12'} mobile={'14'}>

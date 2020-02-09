@@ -8,7 +8,7 @@ import ContactForm from '../components/ContactForm';
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="Contact Us" />
+    <SEO title={'Contact Us'} />
     <ContactForm />
   </Layout>
 );

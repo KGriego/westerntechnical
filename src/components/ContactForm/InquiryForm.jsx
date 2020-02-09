@@ -77,7 +77,6 @@ export default class InquiryForm extends React.Component {
     return (
       <Form
         loading={loading}
-        style={{ width: "80%" }}
         size="big"
         method={"POST"}
         onSubmit={this.handleSubmit}
@@ -86,69 +85,52 @@ export default class InquiryForm extends React.Component {
         name={"contact-form"}
         data-netlify={true}
       >
-        <Grid.Row computer="14">
-          <input type="hidden" name="contact-form" value="hidden" />
-          <Grid.Row computer="14">
-            <Form.Input
-              label="Name"
-              placeholder="John Doe"
-              type="text"
-              name="name"
-              value={name}
-              fluid
-              required
-              onChange={this.handleChange}
-            />
-          </Grid.Row>
-
-          <Grid.Row computer="14">
-            <Form.Input
-              label="Email"
-              type="email"
-              placeholder="JohnDoe@example.com"
-              name="email"
-              value={email}
-              fluid
-              required
-              onChange={this.handleChange}
-            />
-          </Grid.Row>
-          <Grid.Row computer="14">
-            <Form.Input
-              label="Phone Number"
-              type="text"
-              placeholder="xxx-xxx-xxxx"
-              name="phoneNumber"
-              value={phoneNumber}
-              fluid
-              onChange={this.handleChange}
-            />
-          </Grid.Row>
-          <Grid.Row computer="14">
-            <Form.TextArea
-              label="Comments"
-              placeholder="Any questions or concerns, type them here"
-              name="comments"
-              value={comments}
-              fluid={"true"}
-              required
-              onChange={this.handleChange}
-            />
-          </Grid.Row>
-          <Message
-            error
-            header="Please Check The Form"
-            content="Please make sure the required fields are filled"
+        <input type="hidden" name="contact-form" value="hidden" />
+        <Form.Group widths={'equal'}>
+          <Form.Input
+            label="Name"
+            placeholder="John Doe"
+            type="text"
+            name="name"
+            value={name}
+            fluid
+            required
+            onChange={this.handleChange}
           />
-          <Message
-            success
-            header="Email Sent"
-            content="I will get back to you as soon as possible"
+          <Form.Input
+            label="Email"
+            type="email"
+            placeholder="JohnDoe@example.com"
+            name="email"
+            value={email}
+            fluid
+            required
+            onChange={this.handleChange}
           />
-          <Button style={{ margin: 20 }} type="submit">
+        </Form.Group>
+        <Form.Input
+          label="Phone Number"
+          type="text"
+          placeholder="xxx-xxx-xxxx"
+          name="phoneNumber"
+          value={phoneNumber}
+          fluid
+          onChange={this.handleChange}
+        />
+        <Form.TextArea
+          label="Comments"
+          placeholder="Any questions or concerns, type them here"
+          name="comments"
+          value={comments}
+          fluid={"true"}
+          required
+          onChange={this.handleChange}
+        />
+        <div style={{ textAlign: "center" }}>
+          <Button type="submit">
             Submit
           </Button>
-        </Grid.Row>
+        </div>
       </Form>
     );
   }

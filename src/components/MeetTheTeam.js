@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Divider, Item, Card } from 'semantic-ui-react';
-// import "../../CSS/MeetTheTeamContent.css";
 
 export default function MeetTheTeam() {
   return (

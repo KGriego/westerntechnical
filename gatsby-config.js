@@ -32,5 +32,12 @@ module.exports = {
         path: `${__dirname}/src/assets/background`, // wherever background images are stored
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pdfs`,
+        path: `${__dirname}/src/PDF`,
+      },
+    },
   ],
 };

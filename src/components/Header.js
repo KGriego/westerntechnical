@@ -47,16 +47,16 @@ export default class Header extends Component {
     return (
       <nav
         className={`navbar navbar-expand-lg navbar-light fixed-top ${visibilityClass}`}
-        id="mainNav"
+        id={'mainNav'}
       >
-        <div className="container">
+        <div className={'container'}>
           {currentPage === '' ? (
-            <a className="navbar-brand" href="#page-top">
-              <img src={WT} className="img-fluid" alt="" />
+            <a className={'navbar-brand'} href={'#page-top'}>
+              <img src={WT} className={'img-fluid'} alt={''} />
             </a>
           ) : (
             <Link to={'/#page-top'} className={'navbar-brand'}>
-              <img src={WT} className="img-fluid" alt="" />
+              <img src={WT} className={'img-fluid'} alt={''} />
             </Link>
           )}
           <button
@@ -64,33 +64,33 @@ export default class Header extends Component {
             className={`navbar-toggler navbar-toggler-right ${
               openMenu && mobile ? '' : 'collapsed'
             }`}
-            type="button"
-            aria-controls="navbarResponsive"
+            type={'button'}
+            aria-controls={'navbarResponsive'}
             aria-expanded={openMenu}
-            aria-label="Toggle navigation"
+            aria-label={'Toggle navigation'}
           >
-            Menu <i className="fas fa-bars"></i>
+            Menu <i className={'fas fa-bars'}></i>
           </button>
 
           <div
             className={`collapse navbar-collapse ${openMenu ? 'show' : ''}`}
-            id="navbarResponsive"
+            id={'navbarResponsive'}
           >
             <ul
-              className="navbar-nav ml-auto"
+              className={'navbar-nav ml-auto'}
               style={{
                 textAlign: openMenu ? 'center' : 'initial',
               }}
             >
-              <li className="nav-item">
+              <li className={'nav-item'}>
                 {currentPage === '' ? (
                   <Scroll
                     onClick={_ => mobile && this.toggleMenu(!openMenu)}
-                    type="id"
+                    type={'id'}
                     callback={this.checkIfMobileIsTrue}
-                    element="services"
+                    element={'services'}
                   >
-                    <a className="nav-link" href="#services">
+                    <a className={'nav-link'} href={'#services'}>
                       Services
                     </a>
                   </Scroll>
@@ -100,15 +100,15 @@ export default class Header extends Component {
                   </Link>
                 )}
               </li>
-              <li className="nav-item">
+              <li className={'nav-item'}>
                 {currentPage === '' ? (
                   <Scroll
                     onClick={_ => mobile && this.toggleMenu(!openMenu)}
-                    type="id"
+                    type={'id'}
                     callback={this.checkIfMobileIsTrue}
-                    element="about"
+                    element={'about'}
                   >
-                    <a className="nav-link" href="#about">
+                    <a className={'nav-link'} href={'#about'}>
                       About
                     </a>
                   </Scroll>
@@ -122,11 +122,11 @@ export default class Header extends Component {
                 {currentPage === '' ? (
                   <Scroll
                     onClick={_ => mobile && this.toggleMenu(!openMenu)}
-                    type="id"
+                    type={'id'}
                     callback={this.checkIfMobileIsTrue}
-                    element="meettheteam"
+                    element={'meettheteam'}
                   >
-                    <a className="nav-link" href="#meettheteam">
+                    <a className={'nav-link'} href={'#meettheteam'}>
                       Meet the team
                     </a>
                   </Scroll>
@@ -136,20 +136,20 @@ export default class Header extends Component {
                   </Link>
                 )}
               </li>
-              <li className="nav-item">
+              <li className={'nav-item'}>
                 {currentPage === 'contactPage' ? (
                   <Scroll
                     onClick={_ => mobile && this.toggleMenu(!openMenu)}
-                    type="id"
+                    type={'id'}
                     callback={this.checkIfMobileIsTrue}
-                    element="contact"
+                    element={'contact'}
                   >
-                    <a className="nav-link" href="/contact#contact">
+                    <a className={'nav-link'} href={'/contact#contact'}>
                       Contact, scroll
                     </a>
                   </Scroll>
                 ) : (
-                  <Link className="nav-link" to="/contact#contact">
+                  <Link className={'nav-link'} to={'/contact#contact'}>
                     Contact
                   </Link>
                 )}
