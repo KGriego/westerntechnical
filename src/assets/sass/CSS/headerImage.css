@@ -1,0 +1,94 @@
+.headerImage {
+  height: 15.3em;
+  width: 100%;
+  margin: 0 10% !important;
+  padding: 0% !important;
+}
+.headerImage .backgroundCover {
+  position: relative;
+  display: none;
+  height: 100%;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 98%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.headerImage .backgroundCover .textOverlayOfFirstThingYouSee {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 200px;
+  padding: 6% 0.75rem !important;
+}
+.headerImage .backgroundCover .textOverlayOfFirstThingYouSee .header {
+  font-family: Merienda !important;
+  font-size: 3em !important;
+  height: 75px;
+  color: white;
+}
+.headerImage .backgroundCover .textOverlayOfFirstThingYouSee .description {
+  font-family: Dosis;
+  font-size: 1.8em;
+  text-align: center;
+  line-height: 1em;
+  color: white;
+}
+.headerImage
+  .backgroundCover
+  .textOverlayOfFirstThingYouSee
+  .alignCenterTextOverLay {
+  text-align: center;
+}
+.slider {
+  height: 100% !important;
+}
+.slider svg:not(:root) {
+  height: 20px;
+  width: 10px;
+  color: white;
+}
+svg:not(:root) > polygon {
+  fill: black;
+}
+@media only screen and (min-width: 400px) {
+  .headerImage {
+    height: 21em;
+  }
+}
+@media only screen and (min-width: 525px) {
+  .headerImage {
+    height: 24em;
+  }
+}
+@media only screen and (min-width: 680px) {
+  .headerImage {
+    height: 30em;
+  }
+  .headerImage .backgroundCover {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .headerImage {
+    height: 41em;
+  }
+  .headerImage .backgroundCover .textOverlayOfFirstThingYouSee {
+    padding: 4% 0.75rem !important;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .headerImage {
+    height: 55.5em;
+  }
+}

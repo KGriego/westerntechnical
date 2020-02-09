@@ -1,0 +1,27 @@
+.sideNav {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-transition: -webkit-transform ease 1000ms;
+  transition: -webkit-transform ease 1000ms;
+  -webkit-transition: transform ease 1000ms;
+  transition: transform ease 1000ms;
+  position: absolute;
+  left: -250px;
+  top: 0;
+  padding: 0 !important;
+  background-color: #1b1c1d;
+  display: initial !important;
+  width: 250px;
+  height: 100%;
+  z-index: 999;
+}
+.sideNav.show-menu {
+  transform: translate3d(250px, 0, 0);
+  -webkit-transform: translate3d(250px, 0, 0);
+}
+.sideNav .menu a.item,
+.sideNav .menu a div.item {
+  color: white !important;
+  line-height: inherit !important;
+  font-weight: bold !important;
+}

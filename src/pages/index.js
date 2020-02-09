@@ -52,9 +52,7 @@ const IndexPage = () => (
               initDelay={2} // delay before the first transition (if left at 0, the first image will be skipped initially)
               transition={4} // transition duration between images
               duration={8} // how long an image is shown// pass down standard element props
-              style={{
-                transform: "rotate(-2deg) scale(.9)",
-              }}>
+              style={{}}>
             </BackgroundSlider>
           </div>
         </div>

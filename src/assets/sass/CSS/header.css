@@ -1,0 +1,10 @@
+.menuNav {
+  background-color: #f8f9fa !important;
+}
+.menuNav .header img.image {
+  width: 100%;
+}
+.menuNav .menu .item {
+  color: black !important;
+  font-size: 1.2em;
+}
