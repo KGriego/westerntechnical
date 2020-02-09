@@ -17,7 +17,7 @@ export default class Header extends Component {
 
   handleScroll = () => {
     const { visibilityClass } = this.state;
-    if (window.pageYOffset > 250) {
+    if (window.pageYOffset > 100) {
       if (visibilityClass !== 'navbar-shrink') {
         this.setState({ visibilityClass: 'navbar-shrink' });
       }
