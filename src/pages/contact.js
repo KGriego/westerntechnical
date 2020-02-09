@@ -1,10 +1,10 @@
 //Libraries
 import React from "react";
 //SEO & Layout
-import Layout from "../Components/Layout";
-import SEO from "../Components/seo";
+import Layout from "../components/Layout";
+import SEO from "../components/seo";
 //Components
-import ContactForm from "../Components/ContactForm";
+import ContactForm from "../components/ContactForm";
 
 const ContactPage = () => (
   <Layout>

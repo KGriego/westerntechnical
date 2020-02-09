@@ -11,7 +11,7 @@ import MeetTheTeam from '../components/MeetTheTeam';
 
 const IndexPage = () => (
   <Layout>
-    <header className="masthead">
+    <header className="masthead" style={{ height: '100vh' }}>
       <div className="h-100">
         <div style={{
           width: '100vw',
