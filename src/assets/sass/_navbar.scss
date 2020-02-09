@@ -51,18 +51,17 @@
       -webkit-transform: scaleX(1);
       transform: scaleX(1);
     }
-    li > a,
-    li > a:hover {
+    li > a {
       position: relative;
       text-decoration: none;
-      color: $gray-darker;
+      color: white;
       @include alt-font;
       &.active {
         color: $theme-primary !important;
         background-color: transparent;
-        &:hover {
-          background-color: transparent;
-        }
+      }
+      &:hover {
+        color: fade-out($gray-lighter, 0.5);
       }
     }
   }
