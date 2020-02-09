@@ -1,9 +1,9 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 
-import HeaderImage from '../components/homeImage'
+import HeaderImage from '../components/homeImage';
 import HomeBodyContent from '../components/HomeBodyContent';
 import AboutUs from '../components/AboutUs';
 import MeetTheTeam from '../components/MeetTheTeam';
@@ -17,10 +17,10 @@ const IndexPage = () => (
     <section id="about">
       <AboutUs />
     </section>
-    <section id='meettheteam'>
+    <section id="meettheteam">
       <MeetTheTeam />
     </section>
-  </Layout >
+  </Layout>
 );
 
 export default IndexPage;

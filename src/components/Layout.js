@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import Header from './Header'
-import Footer from './Footer'
+import Header from './Header';
+import Footer from './Footer';
 import '../assets/sass/site.scss';
 
 class Layout extends Component {
@@ -38,12 +38,10 @@ class Layout extends Component {
                 <html lang="en" />
               </Helmet>
               <Header />
-              <div className={'page-top'}>
-                {children}
-              </div>
+              <div className={'page-top'}>{children}</div>
               <Footer />
             </>
-          )
+          );
         }}
       />
     );

@@ -14,7 +14,7 @@ class Scroll extends React.Component {
     timeout: PropTypes.number,
     children: PropTypes.node.isRequired,
     onClick: PropTypes.func,
-    callback: PropTypes.func
+    callback: PropTypes.func,
   };
   constructor() {
     super();
@@ -25,7 +25,7 @@ class Scroll extends React.Component {
   }
   handleClick(e) {
     e.preventDefault();
-    const { onClick = () => { } } = this.props;
+    const { onClick = () => {} } = this.props;
     let elem = 0;
     let scroll = true;
     const { type, element, offset, timeout } = this.props;
@@ -48,7 +48,7 @@ class Scroll extends React.Component {
 
     onClick(e);
     if (this.props.callback) {
-      this.props.callback()
+      this.props.callback();
     }
   }
   scrollTo(element, offSet = 0, timeout = null) {
@@ -69,8 +69,8 @@ class Scroll extends React.Component {
         {typeof this.props.children === 'object' ? (
           React.cloneElement(this.props.children, { onClick: this.handleClick })
         ) : (
-            <span onClick={this.handleClick}>{this.props.children}</span>
-          )}
+          <span onClick={this.handleClick}>{this.props.children}</span>
+        )}
       </Element>
     );
   }

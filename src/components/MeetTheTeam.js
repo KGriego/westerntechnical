@@ -1,27 +1,27 @@
-import React from "react";
-import { Grid, Divider, Item, Card } from "semantic-ui-react";
+import React from 'react';
+import { Grid, Divider, Item, Card } from 'semantic-ui-react';
 // import "../../CSS/MeetTheTeamContent.css";
 
 export default function MeetTheTeam() {
   return (
-    <div className={"MeetTheTeamContent"}>
+    <div className={'MeetTheTeamContent'}>
       <Grid>
-        <Grid.Row centered textAlign={"center"}>
-          <Grid.Column mobile={"14"} textAlign={"center"}>
+        <Grid.Row centered textAlign={'center'}>
+          <Grid.Column mobile={'14'} textAlign={'center'}>
             <Item>
               <Item.Content>
-                <Item.Header as={"h1"}>Meet The Team</Item.Header>
+                <Item.Header as={'h1'}>Meet The Team</Item.Header>
               </Item.Content>
             </Item>
             <Divider clearing section />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row centered textAlign={"center"}>
+        <Grid.Row centered textAlign={'center'}>
           <Grid.Column
-            computer={"6"}
-            mobile={"14"}
+            computer={'6'}
+            mobile={'14'}
             style={{ marginBottom: 30 }}
-            tablet={"14"}
+            tablet={'14'}
           >
             <Card fluid>
               <Card.Content>
@@ -43,7 +43,7 @@ export default function MeetTheTeam() {
               </Card.Content>
             </Card>
           </Grid.Column>
-          <Grid.Column computer={"6"} mobile={"14"} tablet={"14"}>
+          <Grid.Column computer={'6'} mobile={'14'} tablet={'14'}>
             <Card fluid style={{ marginBottom: 15 }}>
               <Card.Content>
                 <Card.Header>JuAnne Codding</Card.Header>

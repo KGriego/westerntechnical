@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
 import Scroll from './Scroll';
 import WT from '../assets/images/WT.jpg';
 
@@ -10,11 +10,12 @@ export default class Header extends Component {
       openMenu: false,
       visibilityClass: '',
       currentPage: '',
-      mobile: false
+      mobile: false,
     };
   }
   componentDidMount() {
-    window.location.href.includes('contact') && this.setState({ currentPage: 'contactPage' })
+    window.location.href.includes('contact') &&
+      this.setState({ currentPage: 'contactPage' });
     window.addEventListener('scroll', this.handleScroll);
   }
   componentWillUnmount() {
@@ -37,63 +38,70 @@ export default class Header extends Component {
   checkIfMobileIsTrue = () => {
     const { openMenu } = this.state;
     if (window.innerWidth < 992) {
-      this.toggleMenu(!openMenu)
+      this.toggleMenu(!openMenu);
     }
-  }
+  };
 
   render() {
     const { openMenu, visibilityClass, mobile, currentPage } = this.state;
-    console.log(currentPage)
     return (
       <nav
         className={`navbar navbar-expand-lg navbar-light fixed-top ${visibilityClass}`}
         id="mainNav"
       >
         <div className="container">
-          {currentPage === '' ?
+          {currentPage === '' ? (
             <a className="navbar-brand" href="#page-top">
               <img src={WT} className="img-fluid" alt="" />
             </a>
-            : <Link to={"/#page-top"} className={'navbar-brand'}>
-              <img src={WT} className="img-fluid" alt="" /></Link>
-          }
+          ) : (
+            <Link to={'/#page-top'} className={'navbar-brand'}>
+              <img src={WT} className="img-fluid" alt="" />
+            </Link>
+          )}
           <button
             onClick={_ => this.toggleMenu(!openMenu)}
-            className={`navbar-toggler navbar-toggler-right ${openMenu && mobile ? '' : 'collapsed'}`}
+            className={`navbar-toggler navbar-toggler-right ${
+              openMenu && mobile ? '' : 'collapsed'
+            }`}
             type="button"
             aria-controls="navbarResponsive"
             aria-expanded={openMenu}
             aria-label="Toggle navigation"
           >
-            Menu{' '}
-            <i className="fas fa-bars"></i>
+            Menu <i className="fas fa-bars"></i>
           </button>
 
           <div
             className={`collapse navbar-collapse ${openMenu ? 'show' : ''}`}
             id="navbarResponsive"
           >
-            <ul className="navbar-nav ml-auto" style={{
-              textAlign: openMenu ? 'center' : 'initial'
-            }}>
+            <ul
+              className="navbar-nav ml-auto"
+              style={{
+                textAlign: openMenu ? 'center' : 'initial',
+              }}
+            >
               <li className="nav-item">
-                {
-                  currentPage === '' ?
-                    <Scroll
-                      onClick={_ => mobile && this.toggleMenu(!openMenu)}
-                      type="id"
-                      callback={this.checkIfMobileIsTrue}
-                      element="services"
-                    >
-                      <a className="nav-link" href="#services">
-                        Services
+                {currentPage === '' ? (
+                  <Scroll
+                    onClick={_ => mobile && this.toggleMenu(!openMenu)}
+                    type="id"
+                    callback={this.checkIfMobileIsTrue}
+                    element="services"
+                  >
+                    <a className="nav-link" href="#services">
+                      Services
                     </a>
-                    </Scroll>
-                    : <Link to={"/#services"} className={'nav-link'}>Services</Link>
-                }
+                  </Scroll>
+                ) : (
+                  <Link to={'/#services'} className={'nav-link'}>
+                    Services
+                  </Link>
+                )}
               </li>
               <li className="nav-item">
-                {currentPage === '' ?
+                {currentPage === '' ? (
                   <Scroll
                     onClick={_ => mobile && this.toggleMenu(!openMenu)}
                     type="id"
@@ -102,13 +110,16 @@ export default class Header extends Component {
                   >
                     <a className="nav-link" href="#about">
                       About
-                  </a>
+                    </a>
                   </Scroll>
-                  : <Link to={"/#about"} className={'nav-link'}>
-                    About</Link>}
+                ) : (
+                  <Link to={'/#about'} className={'nav-link'}>
+                    About
+                  </Link>
+                )}
               </li>
               <li className="nav-item">
-                {currentPage === '' ?
+                {currentPage === '' ? (
                   <Scroll
                     onClick={_ => mobile && this.toggleMenu(!openMenu)}
                     type="id"
@@ -117,13 +128,16 @@ export default class Header extends Component {
                   >
                     <a className="nav-link" href="#meettheteam">
                       Meet the team
-                  </a>
+                    </a>
                   </Scroll>
-                  : <Link to={"/#meettheteam"} className={'nav-link'}>
-                    Meet the team</Link>}
+                ) : (
+                  <Link to={'/#meettheteam'} className={'nav-link'}>
+                    Meet the team
+                  </Link>
+                )}
               </li>
               <li className="nav-item">
-                {currentPage === 'contactPage' ?
+                {currentPage === 'contactPage' ? (
                   <Scroll
                     onClick={_ => mobile && this.toggleMenu(!openMenu)}
                     type="id"
@@ -132,17 +146,18 @@ export default class Header extends Component {
                   >
                     <a className="nav-link" href="/contact#contact">
                       Contact, scroll
-                  </a>
-                  </Scroll> :
+                    </a>
+                  </Scroll>
+                ) : (
                   <Link className="nav-link" to="/contact#contact">
                     Contact
                   </Link>
-                }
+                )}
               </li>
             </ul>
           </div>
         </div>
-      </nav >
+      </nav>
     );
   }
 }

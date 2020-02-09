@@ -31,6 +31,6 @@ module.exports = {
         name: `backgrounds`,
         path: `${__dirname}/src/assets/background`, // wherever background images are stored
       },
-    }
+    },
   ],
 };
